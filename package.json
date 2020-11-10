@@ -1,0 +1,79 @@
+{
+  "name": "adonis-bumblebee-ts",
+  "version": "1.0.0",
+  "description": "Api Transformer Provider for AdonisJs v5 TypeScript",
+  "main": "./build/providers/AdonisBublebeeTSProvider.js",
+  "files": [
+    "build/providers",
+    "build/adonis-typings",
+    "build/Bumblebee"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext=.ts",
+    "pretest": "npm run lint",
+    "test": "node japaFile.js",
+    "clean": "rm -rf build",
+    "compile": "npm run lint && npm run clean && tsc && npm run copy:files",
+    "copy:files": "copyfiles \"templates/*.txt\" build",
+    "build": "npm run compile",
+    "prepublishOnly": "npm run build"
+  },
+  "standard": {
+    "global": [
+      "use",
+      "it",
+      "describe",
+      "context",
+      "before",
+      "after"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "bin"
+    ]
+  },
+  "typings": "./build/adonis-typings/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmorpex/adonis-bublebee-ts.git"
+  },
+  "keywords": [
+    "adonis",
+    "api",
+    "transformer"
+  ],
+  "author": "Konstantin Fedorov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmorpex/adonis-bublebee-ts/issues"
+  },
+  "homepage": "https://github.com/kmorpex/adonis-bublebee-ts#readme",
+  "devDependencies": {
+    "@adonisjs/ace": "^7.1.6",
+    "@adonisjs/application": "^3.0.20",
+    "@adonisjs/config": "^2.0.2",
+    "@adonisjs/core": "^5.0.4-preview-rc-2",
+    "@adonisjs/events": "^5.0.5",
+    "@adonisjs/fold": "^7.0.8",
+    "@adonisjs/logger": "^3.0.3",
+    "@adonisjs/lucid": "^9.0.3",
+    "@adonisjs/mrm-preset": "^2.4.0",
+    "@adonisjs/profiler": "^5.0.3",
+    "@poppinss/dev-utils": "^1.0.11",
+    "@types/node": "^14.0.2",
+    "copyfiles": "^2.3.0",
+    "eslint": "^7.12.1",
+    "eslint-plugin-adonis": "^1.0.8",
+    "japa": "^3.0.1",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  },
+  "adonisjs": {
+    "types": "adonis-bumblebee-ts",
+    "providers": [
+      "adonis-bumblebee-ts"
+    ]
+  }
+}
